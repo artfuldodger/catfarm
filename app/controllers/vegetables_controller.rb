@@ -28,6 +28,7 @@ class VegetablesController < ApplicationController
 
     respond_to do |format|
       if @vegetable.save
+        BossMailer.with(vegetable: @vegetable).new_vegetable_alert.deliver_now
         format.html { redirect_to @vegetable, notice: 'Vegetable was successfully created.' }
         format.json { render :show, status: :created, location: @vegetable }
       else
