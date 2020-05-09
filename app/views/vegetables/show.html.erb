@@ -10,5 +10,11 @@
   <%= @vegetable.description %>
 </p>
 
+<% if @vegetable.picture.attached? %>
+  <div>
+    <%= image_tag @vegetable.picture %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_vegetable_path(@vegetable) %> |
 <%= link_to 'Back', vegetables_path %>

@@ -70,6 +70,6 @@ class VegetablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vegetable_params
-      params.require(:vegetable).permit(:name, :description)
+      params.require(:vegetable).permit(:name, :description, :picture)
     end
 end
