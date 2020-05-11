@@ -1,4 +1,5 @@
 class VegetablesController < ApplicationController
+  before_action :authenticate_cat!
   before_action :set_vegetable, only: [:show, :edit, :update, :destroy]
 
   # GET /vegetables

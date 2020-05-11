@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% if cat_signed_in? %>
+      Hi, <%= current_cat.name %>
+      (<%= link_to 'Sign out', destroy_cat_session_path, method: :delete %>)
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
